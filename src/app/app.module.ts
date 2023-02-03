@@ -4,15 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { HomePageComponent } from './home-page/home-page.component';
+import { BooksComponent } from './books/books.component';
+import { LoansComponent } from './loans/loans.component';
+import { GenresComponent } from './genres/genres.component';
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropdownDirective
+    DropdownDirective,
+    HomePageComponent,
+    BooksComponent,
+    LoansComponent,
+    GenresComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
