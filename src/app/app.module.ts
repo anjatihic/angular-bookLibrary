@@ -9,6 +9,8 @@ import { BooksComponent } from './books/books.component';
 import { LoansComponent } from './loans/loans.component';
 import { GenresComponent } from './genres/genres.component';
 import {AppRoutingModule} from "./app-routing.module";
+import { WelcomeBannerComponent } from './home-page/welcome-banner/welcome-banner.component';
+import { FeaturesComponent } from './home-page/features/features.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {AppRoutingModule} from "./app-routing.module";
     HomePageComponent,
     BooksComponent,
     LoansComponent,
-    GenresComponent
+    GenresComponent,
+    WelcomeBannerComponent,
+    FeaturesComponent
   ],
   imports: [
     BrowserModule,
