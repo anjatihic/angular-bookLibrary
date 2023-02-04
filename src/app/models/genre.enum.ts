@@ -1,4 +1,4 @@
-enum Genre{
+enum GenreEnum{
   Fiction = "Fiction",
   NonFiction = "Non-Fiction",
   SciFi = "Sci-Fi",

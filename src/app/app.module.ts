@@ -11,6 +11,7 @@ import { GenresComponent } from './genres/genres.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { WelcomeBannerComponent } from './home-page/welcome-banner/welcome-banner.component';
 import { FeaturesComponent } from './home-page/features/features.component';
+import { BookComponent } from './books/book/book.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FeaturesComponent } from './home-page/features/features.component';
     LoansComponent,
     GenresComponent,
     WelcomeBannerComponent,
-    FeaturesComponent
+    FeaturesComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,
