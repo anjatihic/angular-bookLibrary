@@ -1,0 +1,23 @@
+#banner div{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  justify-content: space-around;
+  backdrop-filter: blur(10px) brightness(70%);
+  width: 70%;
+  padding: 10px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#banner {
+  background-image: url("https://ww2.kqed.org/app/uploads/sites/43/2019/12/many-old-books-stacked-in-texture-picture-id1074590734-1920x1080.jpg");
+  background-size: cover;
+  height: 40vh;
+  width: 100%;
+}
+
+#banner a{
+  width: 20%;
+}
