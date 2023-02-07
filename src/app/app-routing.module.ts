@@ -1,13 +1,13 @@
 import { RouterModule, Routes} from "@angular/router";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {BooksComponent} from "./books/books.component";
-import {GenresComponent} from "./genres/genres.component";
 import {NgModule} from "@angular/core";
+import {CreateNewComponent} from "./create-new/create-new.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: 'full'},
   {path: 'books', component: BooksComponent},
-  {path: 'genres', component: GenresComponent}
+  {path: 'new', component: CreateNewComponent}
 ]
 
 @NgModule({

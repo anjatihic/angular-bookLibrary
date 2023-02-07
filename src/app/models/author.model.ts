@@ -2,7 +2,7 @@ export class Author{
   name: string;
   surname: string;
   yearBorn: number;
-  yearDied: number | null;
+  yearDied?: number;
 
   constructor(name: string, surname: string, yearBorn: number, yearDied?: number) {
     this.name = name;

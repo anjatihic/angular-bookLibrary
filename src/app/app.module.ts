@@ -7,11 +7,15 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { HomePageComponent } from './home-page/home-page.component';
 import { BooksComponent } from './books/books.component';
 import { LoansComponent } from './loans/loans.component';
-import { GenresComponent } from './genres/genres.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { WelcomeBannerComponent } from './home-page/welcome-banner/welcome-banner.component';
 import { FeaturesComponent } from './home-page/features/features.component';
 import { BookComponent } from './books/book/book.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import { CreateNewComponent } from './create-new/create-new.component';
+import { NewAuthorComponent } from './create-new/new-author/new-author.component';
+import { NewBookComponent } from './create-new/new-book/new-book.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,18 @@ import { BookComponent } from './books/book/book.component';
     HomePageComponent,
     BooksComponent,
     LoansComponent,
-    GenresComponent,
     WelcomeBannerComponent,
     FeaturesComponent,
-    BookComponent
+    BookComponent,
+    CreateNewComponent,
+    NewAuthorComponent,
+    NewBookComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
