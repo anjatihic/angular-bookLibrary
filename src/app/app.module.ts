@@ -16,6 +16,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { CreateNewComponent } from './create-new/create-new.component';
 import { NewAuthorComponent } from './create-new/new-author/new-author.component';
 import { NewBookComponent } from './create-new/new-book/new-book.component';
+import { AuthorsComponent } from './authors/authors.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NewBookComponent } from './create-new/new-book/new-book.component';
     BookComponent,
     CreateNewComponent,
     NewAuthorComponent,
-    NewBookComponent
+    NewBookComponent,
+    AuthorsComponent
   ],
   imports: [
     BrowserModule,
