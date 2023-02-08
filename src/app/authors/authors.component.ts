@@ -20,6 +20,7 @@ export class AuthorsComponent implements OnInit{
     this.authorService.getAllAuthors().subscribe(authors => {
       this.isFeatching = false;
       this.authors = authors;
+      console.log(authors);
     }, error => {
       this.isFeatching = false;
       this.error = error.message;

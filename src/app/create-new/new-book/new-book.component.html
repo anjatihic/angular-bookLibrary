@@ -1,1 +1,52 @@
-<p>new-book works!</p>
+<form #bookForm = "ngForm"
+  class="col-xs-12 col-md-6 col-md-offset-3"
+  (ngSubmit)="onCreateBook(bookForm.value)">
+  <div class="form-group">
+    <label for="title">Title*</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      required
+      ngModel
+      name="title">
+  </div>
+
+  <div class="form-group">
+    <label for="authorId">Author*</label>
+    <select name="authorId" id="authorId" class="form-control" required ngModel>
+      <option *ngFor="let author of authors" value="{{author.id}}">{{author.surname}}, {{author.name}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="coverURL">Image URL*</label>
+    <input
+      type="url"
+      class="form-control"
+      id="coverURL"
+      required
+      ngModel
+      name="coverURL">
+  </div>
+
+  <div class="form-group col-xs-12 col-md-6">
+    <label for="yearPublished">Year published*</label>
+    <input
+      type="number"
+      class="form-control"
+      id="yearPublished"
+      required
+      ngModel
+      name="yearPublished">
+  </div>
+
+  <br>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="!bookForm.valid">
+    Add new book
+  </button>
+
+</form>

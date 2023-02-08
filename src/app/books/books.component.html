@@ -1,2 +1,13 @@
-<app-book></app-book>
-<p>books work</p>
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-3">
+    <p *ngIf="books.length < 1 && !isFetching">No books available</p>
+    <ul class="list-group" *ngIf="books.length >= 1 && !isFetching">
+      <li class="list-group-item" *ngFor="let book of books">
+        <img src="{{book.coverURL}}" alt="{{book.title}}" style="max-width: 100%">
+        <h3>{{book.title}}</h3>
+        <h5>{{book.authorId}}</h5>
+        <p>{{book.yearPublished}}</p>
+      </li>
+    </ul>
+  </div>
+</div>

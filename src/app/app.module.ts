@@ -10,7 +10,6 @@ import { LoansComponent } from './loans/loans.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { WelcomeBannerComponent } from './home-page/welcome-banner/welcome-banner.component';
 import { FeaturesComponent } from './home-page/features/features.component';
-import { BookComponent } from './books/book/book.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { CreateNewComponent } from './create-new/create-new.component';
@@ -28,7 +27,6 @@ import { AuthorsComponent } from './authors/authors.component';
     LoansComponent,
     WelcomeBannerComponent,
     FeaturesComponent,
-    BookComponent,
     CreateNewComponent,
     NewAuthorComponent,
     NewBookComponent,
