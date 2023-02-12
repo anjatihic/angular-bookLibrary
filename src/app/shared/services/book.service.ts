@@ -42,4 +42,8 @@ export class BookService {
       .get<Book>("https://library-7a884-default-rtdb.firebaseio.com/books/" + id + ".json");
   }
 
+  deleteBook(id: string){
+    return this.http.delete("https://library-7a884-default-rtdb.firebaseio.com/books/" + id + ".json");
+  }
+
 }

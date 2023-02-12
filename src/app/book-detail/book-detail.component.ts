@@ -3,7 +3,7 @@ import {
   OnInit
 } from '@angular/core';
 import {Book} from "../models/book.model";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {BookService} from "../shared/services/book.service";
 import {Author} from "../models/author.model";
 import {AuthorService} from "../shared/services/author.service";
@@ -21,7 +21,10 @@ export class BookDetailComponent implements OnInit{
   authorId: string;
   isFetching = false;
 
-  constructor(private route: ActivatedRoute, private bookService: BookService, private authorService: AuthorService) {
+  constructor(private route: ActivatedRoute,
+              private bookService: BookService,
+              private authorService: AuthorService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -32,6 +35,14 @@ export class BookDetailComponent implements OnInit{
     this.getAuthor();
     this.getBook();
 
+  }
+
+  onDelete(){
+    this.bookService.deleteBook(this.bookId).subscribe(res => {
+      console.log(res);
+      alert('Ova knjiga je izbrisana!')
+      this.router.navigate(['books']);
+    });
   }
 
   private getBook(){
