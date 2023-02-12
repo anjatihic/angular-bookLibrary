@@ -9,7 +9,7 @@ import {BookDetailComponent} from "./book-detail/book-detail.component";
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: 'full'},
   {path: 'books', component: BooksComponent},
-  {path: 'books/:id', component: BookDetailComponent},
+  {path: 'books/:id/:authorId', component: BookDetailComponent},
   {path: 'new', component: CreateNewComponent},
   {path: 'authors', component: AuthorsComponent}
 ]

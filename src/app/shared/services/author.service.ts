@@ -40,4 +40,9 @@ export class AuthorService{
       }));
   }
 
+  getById(id: string){
+    return this.http
+      .get<Author>("https://library-7a884-default-rtdb.firebaseio.com/authors/" + id + ".json");
+  }
+
 }

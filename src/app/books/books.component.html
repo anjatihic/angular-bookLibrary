@@ -6,7 +6,7 @@
   <div class="col-xs-12 col-md-6 col-md-3">
     <p *ngIf="books.length < 1 && !isFetching">No books available</p>
     <ul class="list-group" *ngIf="books.length >= 1 && !isFetching">
-      <a routerLink="/books/{{book.id}}" *ngFor="let book of books">
+      <a routerLink="/books/{{book.id}}/{{book.authorId}}" *ngFor="let book of books">
         <li class="list-group-item" >
           <img src="{{book.coverURL}}" alt="{{book.title}}" style="max-width: 100%">
           <h3>{{book.title}}</h3>
