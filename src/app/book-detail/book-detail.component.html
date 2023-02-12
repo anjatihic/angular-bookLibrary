@@ -1,0 +1,28 @@
+<div *ngIf="isFetching" style="text-align: center">
+  <app-loader></app-loader>
+</div>
+
+<div class="row" style="margin-top: 30px;">
+  <div class="col-xs-12">
+    <a routerLink="/books">&larr; Knjige</a>
+  </div>
+</div>
+<div class="row" *ngIf="!isFetching && book" style="margin-top: 30px;">
+  <div class="col-xs-12 col-md-6">
+    <img src="{{book.coverURL}}" style="max-width: 70%;" alt="{{book.title}}">
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <h1>{{book.title}}</h1>
+    <h3>{{book.authorId}}</h3>
+    <h5 style="margin-top: 30px;">{{book.yearPublished}}</h5>
+    <p>Žanr: {{book.genre}}</p>
+
+    <div style="margin-top: 30px;">
+      <button type="button" class="btn btn-primary">Posudi knjigu</button>
+    </div>
+    <div class="btn-group" style="margin-top: 30px;">
+      <button type="button" class="btn btn-warning">Uredi knjigu</button>
+      <button type="button" class="btn btn-danger">Izbriši knjigu</button>
+    </div>
+  </div>
+</div>

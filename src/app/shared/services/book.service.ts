@@ -37,4 +37,9 @@ export class BookService {
       }));
   }
 
+  getById(id: string) {
+    return this.http
+      .get<Book>("https://library-7a884-default-rtdb.firebaseio.com/books/" + id + ".json");
+  }
+
 }

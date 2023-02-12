@@ -16,6 +16,8 @@ import { CreateNewComponent } from './create-new/create-new.component';
 import { NewAuthorComponent } from './create-new/new-author/new-author.component';
 import { NewBookComponent } from './create-new/new-book/new-book.component';
 import { AuthorsComponent } from './authors/authors.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AuthorsComponent } from './authors/authors.component';
     CreateNewComponent,
     NewAuthorComponent,
     NewBookComponent,
-    AuthorsComponent
+    AuthorsComponent,
+    BookDetailComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
