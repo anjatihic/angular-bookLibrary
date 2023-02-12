@@ -1,4 +1,4 @@
-enum GenreEnum{
+export enum GenreEnum{
   Fiction = "Fiction",
   NonFiction = "Non-Fiction",
   SciFi = "Sci-Fi",

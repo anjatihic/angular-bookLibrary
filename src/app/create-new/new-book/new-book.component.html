@@ -1,8 +1,8 @@
 <form #bookForm = "ngForm"
   class="col-xs-12 col-md-6 col-md-offset-3"
-  (ngSubmit)="onCreateBook(bookForm.value)">
+  (ngSubmit)="onCreateBook(bookForm.value, bookForm)">
   <div class="form-group">
-    <label for="title">Title*</label>
+    <label for="title">Naslov*</label>
     <input
       type="text"
       class="form-control"
@@ -13,14 +13,14 @@
   </div>
 
   <div class="form-group">
-    <label for="authorId">Author*</label>
+    <label for="authorId">Autor*</label>
     <select name="authorId" id="authorId" class="form-control" required ngModel>
       <option *ngFor="let author of authors" value="{{author.id}}">{{author.surname}}, {{author.name}}</option>
     </select>
   </div>
 
   <div class="form-group">
-    <label for="coverURL">Image URL*</label>
+    <label for="coverURL">URL slike naslovnice*</label>
     <input
       type="url"
       class="form-control"
@@ -30,8 +30,8 @@
       name="coverURL">
   </div>
 
-  <div class="form-group col-xs-12 col-md-6">
-    <label for="yearPublished">Year published*</label>
+  <div class="form-group">
+    <label for="yearPublished">Godina izdavanja*</label>
     <input
       type="number"
       class="form-control"
@@ -39,6 +39,15 @@
       required
       ngModel
       name="yearPublished">
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <label for="authorId">Žanr*</label>
+    <select name="genre" id="genre" class="form-control" required ngModel>
+      <option *ngFor="let genre of genres" value="{{genre}}">{{genre}}</option>
+    </select>
   </div>
 
   <br>

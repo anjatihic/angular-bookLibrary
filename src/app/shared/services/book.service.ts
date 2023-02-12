@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Book} from "../../models/book.model";
 import {Subject} from "rxjs";
 import {map} from 'rxjs/operators';
+import {GenreEnum} from "../../models/genre.enum";
 
 @Injectable({providedIn: 'root'})
 export class BookService {
@@ -11,8 +12,8 @@ export class BookService {
   constructor(private http: HttpClient) {
   }
 
-  createNewBook(title: string, authorId: string, coverURL: string, yearPublished){
-    const bookData = new Book(title, authorId, coverURL, yearPublished);
+  createNewBook(title: string, authorId: string, coverURL: string, yearPublished, genre: GenreEnum){
+    const bookData = new Book(title, authorId, coverURL, yearPublished, genre);
 
     this.http.post('https://library-7a884-default-rtdb.firebaseio.com/books.json',
       bookData
