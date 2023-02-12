@@ -9,7 +9,7 @@
       <a routerLink="/books/{{book.id}}/{{book.authorId}}">
         <li class="list-group-item" >
           <img src="{{book.coverURL}}" alt="{{book.title}}" style="max-width: 100%">
-          <h3>{{book.title}}</h3>
+          <h3>{{book.title | shortenText:19}}</h3>
           <p>{{book.yearPublished}}</p>
         </li>
       </a>

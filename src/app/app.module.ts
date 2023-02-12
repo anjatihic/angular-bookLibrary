@@ -20,6 +20,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
+import { ShortenTextPipe } from './books/shorten-text.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LoginComponent } from './auth/login/login.component';
     BookDetailComponent,
     LoaderComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ShortenTextPipe
   ],
   imports: [
     BrowserModule,
