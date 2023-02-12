@@ -11,7 +11,16 @@ export class User{
   email: string;
   name: string;
   surname: string;
-  loans: Loan[];
+  loans: Loan[] = [];
   role: UserRoleEnum;
+
+  constructor(username: string, password: string, email: string, name: string, surname: string) {
+    this.username = username;
+    this.password = password;
+    this.email = email;
+    this.name = name;
+    this.surname = surname;
+    this.role = UserRoleEnum.user;
+  }
 
 }

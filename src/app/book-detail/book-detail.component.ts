@@ -7,6 +7,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {BookService} from "../shared/services/book.service";
 import {Author} from "../models/author.model";
 import {AuthorService} from "../shared/services/author.service";
+import {User} from "../models/user.model";
+import {Loan} from "../models/loan.model";
+import {UserService} from "../shared/services/user.service";
 
 @Component({
   selector: 'app-book-detail',
@@ -20,14 +23,17 @@ export class BookDetailComponent implements OnInit{
   bookId: string;
   authorId: string;
   isFetching = false;
+  user: User;
 
   constructor(private route: ActivatedRoute,
               private bookService: BookService,
               private authorService: AuthorService,
-              private router: Router) {
+              private router: Router,
+              private userService: UserService) {
   }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('user') as string);
     this.bookId = this.route.snapshot.url[1].path;
     this.authorId = this.route.snapshot.url[2].path;
     this.isFetching = true;
@@ -42,6 +48,15 @@ export class BookDetailComponent implements OnInit{
       console.log(res);
       alert('Ova knjiga je izbrisana!')
       this.router.navigate(['books']);
+    });
+  }
+
+  onLoan(){
+    let loan = new Loan(this.bookId);
+
+    this.userService.borrowBook(loan).subscribe(res => {
+      console.log(res);
+      alert('Knjige je posuđena na korisničko ime: ' + this.user.username);
     });
   }
 
