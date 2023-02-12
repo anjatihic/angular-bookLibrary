@@ -18,6 +18,8 @@ import { NewBookComponent } from './create-new/new-book/new-book.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { LoaderComponent } from './shared/loader/loader.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { LoaderComponent } from './shared/loader/loader.component';
     NewBookComponent,
     AuthorsComponent,
     BookDetailComponent,
-    LoaderComponent
+    LoaderComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
