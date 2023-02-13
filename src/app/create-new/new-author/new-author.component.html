@@ -1,6 +1,6 @@
 <form #authorForm="ngForm"
       class="col-xs-12 col-md-6 col-md-offset-3"
-      (ngSubmit)="onCreateAuthor(authorForm.value)">
+      (ngSubmit)="onCreateAuthor(authorForm.value, authorForm)">
   <div class="form-group">
     <label for="name">Ime*</label>
     <input
@@ -9,7 +9,9 @@
       id="name"
       required
       ngModel
+      #name="ngModel"
       name="name">
+    <span class="help-block" *ngIf="!name.value && name.touched"> Unesite ime autora!</span>
   </div>
 
   <div class="form-group">
@@ -20,10 +22,12 @@
       id="surname"
       required
       ngModel
+      #surname="ngModel"
       name="surname">
+    <span class="help-block" *ngIf="!surname.value && surname.touched"> Unesite prezime autora!</span>
   </div>
 
-  <div class="form-group col-xs-12 col-md-6">
+  <div class="form-group row">
     <label for="yearBorn">Godina rođenja*</label>
     <input
       type="number"
@@ -31,10 +35,10 @@
       id="yearBorn"
       required
       ngModel
+      #yearBorn="ngModel"
       name="yearBorn">
-  </div>
+    <span class="help-block" *ngIf="!yearBorn.value && yearBorn.touched"> Unesite godinu rođenja!</span>
 
-  <div class="form-group col-xs-12 col-md-6">
     <label for="yearDied">Godina smrti</label>
     <input
       type="number"
@@ -42,11 +46,15 @@
       id="yearDied"
       ngModel
       name="yearDied">
+
   </div>
-  <button
-    class="btn btn-primary"
-    type="submit"
-    [disabled]="!authorForm.valid">
-    Add new author
-  </button>
+  <div class="row">
+    <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="!authorForm.valid">
+      Add new author
+    </button>
+  </div>
+
 </form>
