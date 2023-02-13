@@ -1,13 +1,13 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a routerLink="{{user ? '' : '#'}}" class="navbar-brand">Knjižnica</a>
+      <a [class.disabled_link]="!user" routerLink="{{user ? '' : '#'}}" class="navbar-brand">Knjižnica</a>
     </div>
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li *ngIf=" user"><a routerLink="/books">Knjige</a></li>
-        <li *ngIf=" user" routerLinkActive="active"><a routerLink="/authors">Pretraga po autorima</a></li>
+        <li *ngIf=" user "><a routerLink="/books">Knjige</a></li>
+        <li *ngIf=" user" routerLinkActive="active"><a routerLink="/authors">Svi autori</a></li>
         <li *ngIf=" user && user.role === 0" routerLinkActive="active"><a routerLink="/new">Dodaj u knjižnicu</a></li>
       </ul>
 

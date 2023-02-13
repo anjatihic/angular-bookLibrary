@@ -8,12 +8,19 @@ import {BookDetailComponent} from "./book-detail/book-detail.component";
 import {LoansComponent} from "./loans/loans.component";
 import {RegisterComponent} from "./auth/register/register.component";
 import {LoginComponent} from "./auth/login/login.component";
+import {NewAuthorComponent} from "./create-new/new-author/new-author.component";
+import {NewBookComponent} from "./create-new/new-book/new-book.component";
+import {StartPageComponent} from "./create-new/start-page/start-page.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: 'full'},
   {path: 'books', component: BooksComponent},
   {path: 'books/:id/:authorId', component: BookDetailComponent},
-  {path: 'new', component: CreateNewComponent},
+  {path: 'new', component: CreateNewComponent, children: [
+      {path: '', component: StartPageComponent},
+      {path: 'author', component: NewAuthorComponent},
+      {path: 'book', component: NewBookComponent}
+    ]},
   {path: 'authors', component: AuthorsComponent},
   {path: 'myLoans', component: LoansComponent},
   {path: 'register', component: RegisterComponent},

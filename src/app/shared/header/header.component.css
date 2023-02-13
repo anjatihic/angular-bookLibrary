@@ -1,3 +1,7 @@
 nav{
   margin-bottom: 0;
 }
+
+.disabled_link{
+  cursor: not-allowed;
+}

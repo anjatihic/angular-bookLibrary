@@ -1,2 +1,21 @@
-<app-new-author></app-new-author>
-<app-new-book></app-new-book>
+<div class="row" style="margin-top: 40px">
+  <div class="col-md-5">
+    <a routerLink="/new/author"
+       routerLinkActive="active"
+       class="list-group-item clearfix"
+       style="cursor: pointer;">
+
+      <h4>Kreiraj novog autora</h4>
+    </a>
+    <a routerLink="/new/book"
+       routerLinkActive="active"
+       class="list-group-item clearfix"
+       style="cursor: pointer;">
+
+      <h4>Kreiraj novu knjigu</h4>
+    </a>
+  </div>
+  <div class="col-md-7">
+    <router-outlet></router-outlet>
+  </div>
+</div>

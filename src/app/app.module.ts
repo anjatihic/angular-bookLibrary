@@ -21,6 +21,7 @@ import { LoaderComponent } from './shared/loader/loader.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ShortenTextPipe } from './books/shorten-text.pipe';
+import { StartPageComponent } from './create-new/start-page/start-page.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ShortenTextPipe } from './books/shorten-text.pipe';
     LoaderComponent,
     RegisterComponent,
     LoginComponent,
-    ShortenTextPipe
+    ShortenTextPipe,
+    StartPageComponent
   ],
   imports: [
     BrowserModule,
