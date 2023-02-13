@@ -28,4 +28,8 @@ export class RegisterComponent {
     this.router.navigate(['/login']);
     location.reload();
   }
+
+  onResetForm(form: NgForm){
+    form.reset();
+  }
 }

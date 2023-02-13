@@ -10,16 +10,18 @@
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="username">Korisničko ime</label>
-                  <input ngModel type="text" id="username" name="username" class="form-control form-control-lg" />
+                  <input #username="ngModel" required ngModel type="text" id="username" name="username" class="form-control form-control-lg" />
+                  <span class="help-block" *ngIf="!username.valid && username.touched"> Unesite korisničko ime!</span>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="password">Lozinka</label>
-                  <input ngModel type="password" name="password" id="password" class="form-control form-control-lg" />
+                  <input #pass="ngModel" required ngModel type="password" name="password" id="password" class="form-control form-control-lg" />
+                  <span class="help-block" *ngIf="!pass.valid && pass.touched"> Unesite lozinku!</span>
                 </div>
 
                 <div class="d-flex justify-content-end pt-3" style="margin-bottom: 30px; margin-top: 30px">
-                  <button type="submit" class="btn btn-success">Prijavi se</button>
+                  <button [disabled]="!loginForm.valid" type="submit" class="btn btn-success">Prijavi se</button>
                 </div>
                 <br>
                 <a routerLink="/register"> Ako još nisi korisnik, registriraj se &rarr;</a>

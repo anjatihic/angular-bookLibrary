@@ -11,7 +11,7 @@
       ngModel
       #name="ngModel"
       name="name">
-    <span class="help-block" *ngIf="!name.value && name.touched"> Unesite ime autora!</span>
+    <span class="help-block" *ngIf="!name.valid && name.touched"> Unesite ime autora!</span>
   </div>
 
   <div class="form-group">
@@ -24,7 +24,7 @@
       ngModel
       #surname="ngModel"
       name="surname">
-    <span class="help-block" *ngIf="!surname.value && surname.touched"> Unesite prezime autora!</span>
+    <span class="help-block" *ngIf="!surname.valid && surname.touched"> Unesite prezime autora!</span>
   </div>
 
   <div class="form-group row">
@@ -37,7 +37,7 @@
       ngModel
       #yearBorn="ngModel"
       name="yearBorn">
-    <span class="help-block" *ngIf="!yearBorn.value && yearBorn.touched"> Unesite godinu rođenja!</span>
+    <span class="help-block" *ngIf="!yearBorn.valid && yearBorn.touched"> Unesite godinu rođenja!</span>
 
     <label for="yearDied">Godina smrti</label>
     <input

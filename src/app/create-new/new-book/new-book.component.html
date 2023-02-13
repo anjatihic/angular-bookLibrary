@@ -11,7 +11,7 @@
       ngModel
       #title="ngModel"
       name="title">
-    <span class="help-block" *ngIf="!title.value && title.touched"> Unesite naslov knjige!</span>
+    <span class="help-block" *ngIf="!title.valid && title.touched"> Unesite naslov knjige!</span>
   </div>
 
   <div class="form-group">
@@ -19,7 +19,7 @@
     <select name="authorId" id="authorId" class="form-control" required ngModel #authorId="ngModel">
       <option *ngFor="let author of authors" value="{{author.id}}">{{author.surname}}, {{author.name}}</option>
     </select>
-    <span class="help-block" *ngIf="!authorId.value && authorId.touched"> Odaberite autora!</span>
+    <span class="help-block" *ngIf="!authorId.valid && authorId.touched"> Odaberite autora!</span>
   </div>
 
   <div class="form-group">
@@ -32,7 +32,7 @@
       ngModel
       #url="ngModel"
       name="coverURL">
-    <span class="help-block" *ngIf="!url.value && url.touched"> Unesite URL naslovnice!</span>
+    <span class="help-block" *ngIf="!url.valid && url.touched"> Unesite URL naslovnice!</span>
   </div>
 
   <div class="form-group">
@@ -45,7 +45,7 @@
       ngModel
       #yearPublished="ngModel"
       name="yearPublished">
-    <span class="help-block" *ngIf="!yearPublished.value && yearPublished.touched"> Unesite godinu izdavanja!</span>
+    <span class="help-block" *ngIf="!yearPublished.valid && yearPublished.touched"> Unesite godinu izdavanja!</span>
   </div>
 
   <br>
@@ -55,7 +55,7 @@
     <select name="genre" id="genre" class="form-control" required ngModel #genre="ngModel">
       <option *ngFor="let genre of genres" value="{{genre}}">{{genre}}</option>
     </select>
-    <span class="help-block" *ngIf="!genre.value && genre.touched"> Odaberite žanr!</span>
+    <span class="help-block" *ngIf="!genre.valid && genre.touched"> Odaberite žanr!</span>
   </div>
 
   <br>
