@@ -1,1 +1,23 @@
-<p>loans works!</p>
+<h4 *ngIf="!book && !isFetching">Trenutno nemaš ništa posuđeno</h4>
+
+<div *ngIf="isFetching" style="text-align: center">
+  <app-loader></app-loader>
+</div>
+<h1 *ngIf="!isFetching && book">Trenutno čitaš:</h1>
+<div class="row" *ngIf="!isFetching && book">
+  <div class="col-xs-6">
+    <img [src]="book.coverURL" alt="{{book.title}}" class="img-responsive" style="max-width: 40%; margin: auto">
+  </div>
+  <div class="col-xs-6">
+    <h3>{{book.title}}</h3>
+    <p>{{book.yearPublished}}</p>
+    <div>
+      <p>Posuđeno: {{this.user.loan.dateLoaned | date :'longDate'}}</p>
+      <p>Potrebno vratiti do: {{this.user.loan.dateDue | date: 'longDate'}}</p>
+    </div>
+    <div>
+      <button (click)="onReturn()" type="button" class="btn btn-danger">Vrati knjigu</button>
+    </div>
+  </div>
+</div>
+

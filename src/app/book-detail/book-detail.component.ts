@@ -56,7 +56,7 @@ export class BookDetailComponent implements OnInit{
 
     this.userService.borrowBook(loan).subscribe(res => {
       console.log(res);
-      alert('Knjige je posuđena na korisničko ime: ' + this.user.username);
+      alert('Knjiga je posuđena na korisničko ime: ' + this.user.username);
     });
   }
 

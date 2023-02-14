@@ -44,23 +44,19 @@ export class UserService{
     return this.userSubject;
   }
 
-  getUser(id: string) {
-    return this.users.find((u) => {
-      u.id === id;
-    })
-  }
-
   borrowBook(loan: Loan){
     this.user = JSON.parse(localStorage.getItem('user') as string);
-    console.log(this.user.loans);
 
-    if(this.user.loans){
-      this.user.loans.push(loan);
-      console.log('book already loaned')
-    }else{
-      this.user.loans = [loan]
-    }
+    this.user.loan = loan;
 
+
+    return this.http.put("https://library-7a884-default-rtdb.firebaseio.com/users/" + this.user.id + ".json", this.user);
+  }
+
+  returnBook() {
+    this.user = JSON.parse(localStorage.getItem('user') as string);
+
+    this.user.loan = null;
 
     return this.http.put("https://library-7a884-default-rtdb.firebaseio.com/users/" + this.user.id + ".json", this.user);
   }
