@@ -48,7 +48,7 @@ export class AuthService{
         this.user = user;
         localStorage.setItem('user', JSON.stringify(this.user));
         this.authState.next(true);
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }else{
         this.error.next('Krivi podaci!');
       }

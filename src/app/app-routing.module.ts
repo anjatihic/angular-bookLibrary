@@ -13,7 +13,8 @@ import {NewBookComponent} from "./create-new/new-book/new-book.component";
 import {StartPageComponent} from "./create-new/start-page/start-page.component";
 
 const appRoutes: Routes = [
-  {path: '', component: HomePageComponent, pathMatch: 'full'},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: 'home', component: HomePageComponent},
   {path: 'books', component: BooksComponent},
   {path: 'books/:id/:authorId', component: BookDetailComponent},
   {path: 'new', component: CreateNewComponent, children: [
